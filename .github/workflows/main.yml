@@ -24,7 +24,7 @@ jobs:
           path: main
 
       - name: Checkout private tools
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
         with:
           repository: Gilead-Biometrics-DataEngineering/gpythonvenv
           token: ${{ secrets.GITHUB_TOKEN }}
