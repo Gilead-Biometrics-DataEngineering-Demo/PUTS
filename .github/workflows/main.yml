@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Gilead-Biometrics-DataEngineering/m_passw
-          token: ${{ secrets.GitHub_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           path: m_passw
     
       - name: Install Python 3
