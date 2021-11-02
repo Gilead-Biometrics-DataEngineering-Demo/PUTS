@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: Gilead-Biometrics-DataEngineering/gpythonvenv
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACCESS_TOKEN }}
           path: gpythonvenv
     
       - name: Install Python 3
