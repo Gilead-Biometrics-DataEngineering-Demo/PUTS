@@ -29,7 +29,13 @@ jobs:
           repository: Gilead-Biometrics-DataEngineering/gpythonvenv
           token: ${{ secrets.my_pat }}
           path: gpythonvenv
-    
+ 
+       - name: Checkout another
+        uses: actions/checkout@master
+        with:
+          repository: cchowthi/testscript
+          path: testscript
+          
       - name: Install Python 3
         uses: actions/setup-python@v1
         with:
