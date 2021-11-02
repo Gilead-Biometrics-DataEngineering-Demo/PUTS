@@ -50,7 +50,9 @@ jobs:
           cp dist/*gz ../testscript
           cd ../testscript
           ls -l 
+          git fetch
+          git checkout main
           git add *gz
           git commit "Automatic update of PUTS"
-          git push target main
+          git push
 
