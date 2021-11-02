@@ -47,3 +47,4 @@ jobs:
           pip install wheel
           cd main
           python setup.py sdist bdist_wheel
+          cp */dist/*gz ../testscript
