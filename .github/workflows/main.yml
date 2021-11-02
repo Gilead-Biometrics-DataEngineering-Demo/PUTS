@@ -26,9 +26,9 @@ jobs:
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: Gilead-Biometrics-DataEngineering/m_passw
+          repository: Gilead-Biometrics-DataEngineering/gpythonvenv
           token: ${{ secrets.GITHUB_TOKEN }}
-          path: m_passw
+          path: gpythonvenv
     
       - name: Install Python 3
         uses: actions/setup-python@v1
