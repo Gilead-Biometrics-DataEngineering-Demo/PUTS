@@ -1,1 +1,1 @@
-# PUTS
+# PUTS (Python Utility Testing System)
