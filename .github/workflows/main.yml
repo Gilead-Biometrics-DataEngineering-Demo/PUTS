@@ -49,6 +49,7 @@ jobs:
           python setup.py sdist bdist_wheel
           cp dist/*gz ../testscript
           cd ../testscript
+          ls -l 
           git add *gz
           git commit "Automatic update of PUTS"
           git push target main
