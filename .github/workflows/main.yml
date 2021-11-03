@@ -23,14 +23,14 @@ jobs:
         with:
           path: main
 
-      - name: Checkout private tools
+      - name: Get requirements
         uses: actions/checkout@v2
         with:
           repository: Gilead-Biometrics-DataEngineering/gpythonvenv
           token: ${{ secrets.my_pat }}
           path: gpythonvenv
  
-      - name: Checkout another
+      - name: Checkout destination rep
         uses: actions/checkout@v2
         with:
           repository: cchowthi/testscript
@@ -42,15 +42,18 @@ jobs:
         with:
           python-version: 3.6
 
-      - name: Install dependencies
+      - name: Create python module
         run: |
           python -m pip install --upgrade pip
           pip install wheel
           cd main
           python setup.py sdist bdist_wheel
           cp dist/*gz ../testscript
+
+      - name: Commit to destination repo
+        run: |
           cd ../testscript
-          ls -l 
+          ls -l
           git config --global user.name "${{ secrets.my_name }}"
           git config --global user.email  "${{ secrets.my_email }}"
           git fetch
