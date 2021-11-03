@@ -50,6 +50,7 @@ jobs:
           cp dist/*gz ../testscript
           cd ../testscript
           ls -l 
+          git config --local -e
           git fetch
           git checkout main
           git add *gz
