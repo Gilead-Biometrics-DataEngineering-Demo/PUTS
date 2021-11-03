@@ -50,7 +50,8 @@ jobs:
           cp dist/*gz ../testscript
           cd ../testscript
           ls -l 
-          git config --local -e
+          git config --global user.name "${{ secrets.my_name }}"
+          git config --global user.email  "${{ secrets.my_email }}"
           git fetch
           git checkout main
           git add *gz
