@@ -31,9 +31,10 @@ jobs:
           path: gpythonvenv
  
       - name: Checkout another
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           repository: cchowthi/testscript
+          token: ${{ secrets.cchowthi_pat }}
           path: testscript
           
       - name: Install Python 3
