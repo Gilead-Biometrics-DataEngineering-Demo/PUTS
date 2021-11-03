@@ -53,6 +53,6 @@ jobs:
           git fetch
           git checkout main
           git add *gz
-          git commit "Automatic update of PUTS"
+          git commit -m "Automatic update of PUTS"
           git push
 
