@@ -52,7 +52,7 @@ jobs:
 
       - name: Commit to destination repo
         run: |
-          cd ../testscript
+          cd testscript
           ls -l
           git config --global user.name "${{ secrets.my_name }}"
           git config --global user.email  "${{ secrets.my_email }}"
