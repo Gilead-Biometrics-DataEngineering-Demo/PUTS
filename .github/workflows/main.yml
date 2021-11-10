@@ -51,7 +51,7 @@ jobs:
           cd dist
           latest=$(ls -t *gz | head -n1)
           echo $latest
-          module="${latest##-*}"
+          module=${latest%-*}
           echo $module
           cp *gz ../../testscript
 
