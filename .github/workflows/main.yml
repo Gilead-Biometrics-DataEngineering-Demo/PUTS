@@ -48,7 +48,12 @@ jobs:
           pip install wheel
           cd main
           python setup.py sdist bdist_wheel
-          cp dist/*gz ../testscript
+          cd dist
+          latest=$(ls -t *gz | head -n1)
+          echo $latest
+          module="${latest##-*}"
+          echo $module
+          cp *gz ../../testscript
 
       - name: Commit to destination repo
         run: |
