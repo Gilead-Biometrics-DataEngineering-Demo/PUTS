@@ -50,9 +50,10 @@ jobs:
           python setup.py sdist bdist_wheel
           cd dist
           latest=$(ls -t *gz | head -n1)
-          echo $latest
+          echo Latest distribution is $latest
           module=${latest%-*}
-          echo $module
+          echo Replacing the previous $module module with the latest
+          rm ../../m-mkvenv/$module*gz
           cp *gz ../../m-mkvenv
 
       - name: Commit to destination repo
