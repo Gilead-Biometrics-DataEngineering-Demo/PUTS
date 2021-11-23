@@ -17,6 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Get requirements
+        uses: actions/checkout@v2
+        with:
+          repository: Gilead-Biometrics-DataEngineering/gpythonvenv
+          token: ${{ secrets.my_pat }}
+          path: gpythonvenv
+      
       - name: Set Up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
@@ -24,6 +31,7 @@ jobs:
           
       - name: Install dependencies
         run: |
+          cp ../gpythonvenv/requirements.txt .
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
