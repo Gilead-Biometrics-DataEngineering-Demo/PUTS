@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="puts",
-    version="0.0.2",
+    version="0.0.3",
     author="Christal Chowthi",
     author_email="christal.chowthi@gilead.com",
     description="Python Utility Testing System",
