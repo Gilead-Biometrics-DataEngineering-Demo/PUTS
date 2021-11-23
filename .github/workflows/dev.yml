@@ -33,9 +33,9 @@ jobs:
           
       - name: Install dependencies
         run: |
-          cp gpythonvenv/requirements.txt .dev/
+          cp gpythonvenv/gpythonvenv_requirements.txtt .dev/
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r gpythonvenv_requirements.txt
           
       - name: Run tests with pytest
         run: pytest 
