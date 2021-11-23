@@ -6,7 +6,7 @@ on:
       - dev
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     
     strategy:
