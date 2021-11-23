@@ -1,0 +1,39 @@
+
+name: Run Python Tests
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        # Run in all these versions of Python
+        python-version: [3.6, 3.8, 3.9]
+        
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Get requirements
+        uses: actions/checkout@v2
+        with:
+          repository: Gilead-Biometrics-DataEngineering/gpythonvenv
+          token: ${{ secrets.my_pat }}
+          path: gpythonvenv
+      
+      - name: Set Up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          
+      - name: Install dependencies
+        run: |
+          cp ../gpythonvenv/requirements.txt .
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run tests with pytest
+        run: pytest 
