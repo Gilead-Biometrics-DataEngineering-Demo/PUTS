@@ -16,7 +16,9 @@ jobs:
         
     steps:
       - uses: actions/checkout@v2
-      
+        with:
+          path: dev
+          
       - name: Get requirements
         uses: actions/checkout@v2
         with:
@@ -31,7 +33,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          cp ../gpythonvenv/requirements.txt .
+          cp gpythonvenv/requirements.txt .dev/
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
