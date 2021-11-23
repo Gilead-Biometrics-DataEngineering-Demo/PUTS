@@ -12,7 +12,7 @@
 # Change History: 
 #      2020-02-16  lsleeper - Original programming   
 #      2021-03-02  cchowthi - Added puts_diff_html, details and pdf_frm02060
-#      2021-10-27  cchowthi - Added docx_frm02060
+#      2021-10-27  cchowthi - Added docx_frm02060.
 #
 ########## end of header ###########################################/
 
