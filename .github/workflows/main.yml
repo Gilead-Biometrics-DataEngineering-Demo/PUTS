@@ -24,15 +24,15 @@ jobs:
       - name: Get requirements
         uses: actions/checkout@v2
         with:
-          repository: Gilead-Biometrics-DataEngineering/gpythonvenv
-          token: ${{ secrets.my_pat }}
+          repository: Gilead-Biometrics-DataEngineering-Demo/gpythonvenv
+          token: ${{ secrets.PAT }}
           path: gpythonvenv
  
       - name: Checkout destination rep
         uses: actions/checkout@v2
         with:
-          repository: cchowthi/m-mkvenv
-          token: ${{ secrets.cchowthi_pat }}
+          repository: Gilead-Biometrics-DataEngineering-Demo/m-mkvenv
+          token: ${{ secrets.PAT }}
           path: m-mkvenv
           
       - name: Install Python 3
@@ -58,8 +58,8 @@ jobs:
         run: |
           cd m-mkvenv
           ls -l
-          git config --global user.name "${{ secrets.my_name }}"
-          git config --global user.email  "${{ secrets.my_email }}"
+          git config --global user.name "${{ secrets.NAME }}"
+          git config --global user.email  "${{ secrets.EMAIL }}"
           git fetch
           git checkout main
           git add *gz
